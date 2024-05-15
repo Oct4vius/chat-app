@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'PersonaFont';
+  src: url('./assets/fonts/p5hatty-1.ttf');
+}
+
+@font-face {
+  font-family: 'Expose Regular';
+  src: url('./assets/fonts/Expose-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Markin-LT';
+  src: url('./assets/fonts/Markin-LT-Ultra-Bold.ttf');
+}
+
+*{
+  color: white;
+  font-family: 'PersonaFont';
+}

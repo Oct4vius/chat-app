@@ -5,27 +5,10 @@ import { AfterContentChecked, Component, ElementRef, ViewChild } from '@angular/
   standalone: true,
   imports: [CommonModule],
   templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class HomeComponent implements AfterContentChecked  {
+export class HomeComponent {
   
-  @ViewChild('P5body')
-  public fatherDiv?: ElementRef<HTMLDivElement>;
 
-  public childDivHeight: number = 0;
-
-  ngAfterContentChecked(): void {
-    console.log(this.fatherDiv?.nativeElement.offsetHeight)
-
-    if(this.fatherDiv)
-
-    // this.childDivHeight = this.fatherDiv.nativeElement.offsetHeight
-    
-    // this.fatherDiv.nativeElement.style.borderBottomWidth = this.childDivHeight + 'px'
-    
-    console.log(this.fatherDiv.nativeElement.offsetHeight)
-  }
-
-
-  
 
 }

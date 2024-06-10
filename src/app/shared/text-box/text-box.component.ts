@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'text-box',
+  selector: 'shared-text-box',
   standalone: true,
   imports: [
     CommonModule,
@@ -10,9 +10,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   templateUrl: './text-box.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TextBoxComponent { 
+export class TextBoxComponent {
   @Input()
   public customStyles: string = ''
 
-  
+
 }

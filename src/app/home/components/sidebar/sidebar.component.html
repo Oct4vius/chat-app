@@ -1,4 +1,4 @@
-<div class="bg-primary flex flex-col items-center justify-center p-4">
+<div class="bg-primary flex flex-col items-center justify-center p-4 rounded">
   <shared-img-box
     src="../../assets/img/noman.jpg"
   />
@@ -6,4 +6,19 @@
   <span class="text-lg">Octavio Armando Luperon Vasquez</span>
 </div>
 
-<div class="bg-primary h-5/6">hola</div>
+<div class="bg-primary h-5/6 rounded overflow-auto">
+
+  @for (user of usersChat(); track $index) {
+    <div class="flex items-center" >
+      <shared-img-box
+        classes="w-12 h-12"
+        [src]="user.img" 
+      />
+      <div class="flex flex-col">  
+        <span class="text-xl" >{{ user.name }}</span>
+        <span> {{ user.lastMessage }} </span>
+      </div>
+    </div>
+  }
+
+</div>

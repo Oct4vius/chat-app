@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: 'Expose Regular';
+  font-family: 'ExposeRegular';
   src: url('./assets/fonts/Expose-Regular.otf');
 }
 
@@ -24,7 +24,18 @@
   margin: 0;
 }
 
-img{
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
 
-  // transform: perspective(1000px) rotateX(15deg) rotateY(15deg) rotateZ(10deg) translateX(0px) translateY(0px) translateZ(0px);
+
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
 }

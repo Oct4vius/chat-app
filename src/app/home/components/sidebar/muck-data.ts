@@ -50,5 +50,30 @@ export const usersMuck: UsersSideBar[] = [
       name: "Jenny Kim",
       img: "https://randomuser.me/api/portraits/women/5.jpg",
       lastMessage: "Could you send me the files?"
+    },
+    {
+      name: "Fiona Davis",
+      img: "https://randomuser.me/api/portraits/women/3.jpg",
+      lastMessage: "Great job on the presentation!"
+    },
+    {
+      name: "George Harris",
+      img: "https://randomuser.me/api/portraits/men/4.jpg",
+      lastMessage: "Got the documents."
+    },
+    {
+      name: "Hannah Lee",
+      img: "https://randomuser.me/api/portraits/women/4.jpg",
+      lastMessage: "Let's catch up soon!"
+    },
+    {
+      name: "Ivan Martinez",
+      img: "https://randomuser.me/api/portraits/men/5.jpg",
+      lastMessage: "Meeting rescheduled to 3 pm."
+    },
+    {
+      name: "Jenny Kim",
+      img: "https://randomuser.me/api/portraits/women/5.jpg",
+      lastMessage: "Could you send me the files?"
     }
   ];

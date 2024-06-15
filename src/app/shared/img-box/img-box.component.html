@@ -1,7 +1,13 @@
 
-<div class="p-5 bg-secundary trapezoid-2">
+<div class=" p-2 bg-secundary -skew-x-6 relative">
 
-  <img [src]="src" [alt]="alt" [ngClass]="['trapezoid border-4', classes]">
+  <img [src]="src" [alt]="alt" [ngClass]="['border-4 rotate-2 skew-x-2', classes]">
+
+  @if (userName) {
+    <span class="text-3xl absolute -top-3 -left-2 -rotate-45 drop-shadow-2xl name">
+      {{ userName | cutNames }}
+    </span>
+    }
 
 </div>
 

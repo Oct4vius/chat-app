@@ -4,5 +4,13 @@
 
 .trapezoid-2 {
   clip-path: polygon(2% 1%, 96% 4%, 98% 97%, 1% 100%);
+}
 
+.perspective {
+  transform: translateZ(45deg);
+}
+
+.name {
+  text-shadow: 3px 3px 0 #000, -3px 3px 0 #000, -3px -3px 0 #000,
+    3px -3px 0 #000;
 }

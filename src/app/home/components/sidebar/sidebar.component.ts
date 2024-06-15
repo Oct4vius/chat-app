@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { ImgBoxComponent } from '../../../shared/img-box/img-box.component';
 import { UsersSideBar } from '../../../interfaces/sidebar.interfaces';
 import { usersMuck } from './muck-data';
@@ -9,16 +9,17 @@ import { usersMuck } from './muck-data';
   standalone: true,
   imports: [
     CommonModule,
-    ImgBoxComponent
+    ImgBoxComponent,
   ],
   templateUrl: './sidebar.component.html',
+  styleUrl: './sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class SidebarComponent { 
 
-
-  public usersChat = signal<UsersSideBar[]>(usersMuck)
+  public currentUser = computed<string>(() => "Octavio Armando Luperón Vásquez")
+  public usersChat = computed<UsersSideBar[]>(() => usersMuck)
 
 
 }

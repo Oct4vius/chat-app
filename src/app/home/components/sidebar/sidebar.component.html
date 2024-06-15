@@ -1,14 +1,27 @@
-<div class="bg-primary flex items-center justify-center p-4 rounded ">
-  <shared-img-box classes="w-12" src="../../assets/img/noman.jpg" [userName]="currentUser()" />
+<div class="bg-primary flex items-center justify-center p-4 rounded">
+  <shared-img-box
+    classes="w-12"
+    src="../../assets/img/noman.jpg"
+    [userName]="currentUser()"
+  />
 </div>
 
-<div class="bg-primary h-full rounded overflow-auto flex flex-col gap-4 p-2 pt-4">
-  @for (user of usersChat(); track $index) {
+<div
+  class="bg-primary h-full rounded overflow-auto flex flex-col gap-4 p-2 pt-4"
+>
+  @for (user of usersChat(); track $index ) {
   <div
     class="flex items-center hover:scale-[1.020] active:scale-100 transition-all cursor-pointer select-none"
+    (click)="handleClickUser($index)"
   >
-    <shared-img-box classes="w-12 h-12" [src]="user.img" [userName]="user.name" />
-    <div class="flex flex-col bg-secundary -skew-x-6 w-fit px-4 h-full justify-center">
+    <shared-img-box
+      classes="w-12 h-12"
+      [src]="user.img"
+      [userName]="user.name"
+    />
+    <div
+      class="flex flex-col bg-secundary -skew-x-6 w-fit px-4 h-full justify-center"
+    >
       <span> {{ user.lastMessage }} </span>
     </div>
   </div>

@@ -1,7 +1,13 @@
-<div class="h-full relative">
+<div class="h-full relative flex p-2">
+  <h3 class="text-6xl -rotate-45 absolute top-0 left-0">
+    {{ curretChat().name | cutNames }}
+  </h3>
 
-    <h3 class="text-6xl -rotate-45 absolute top-0 left-0" >{{ curretChat().name | cutNames}}</h3>
-
-
-
+  <div class="self-end w-full">
+    <input
+      type="text"
+      class="w-full bg-secundary border-4 px-2"
+      placeholder="What do you want to say?"
+    />
+  </div>
 </div>

@@ -1,35 +1,37 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewChecked, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnInit } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, ReactiveFormsModule],
   templateUrl: './auth-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthLayoutComponent implements AfterViewChecked {
+export class AuthLayoutComponent implements OnInit {
 
-  @ViewChild('title') titleElenmt?: ElementRef<HTMLHeadingElement>;
-  @ViewChild('thediv') theDiv?: ElementRef<HTMLDivElement>
 
-  ngAfterViewChecked(): void {
+  ngOnInit(): void {
 
-    // if(!this.titleElenmt?.nativeElement || !this.theDiv?.nativeElement) return
-
-    // const divRect = this.theDiv?.nativeElement.getBoundingClientRect();
-    // const h1Rect = this.titleElenmt?.nativeElement.getBoundingClientRect();
-
-    // // Check if the div overlaps the h1
-    // const overlap = !(divRect.right < h1Rect.left ||
-    //                   divRect.left > h1Rect.right ||
-    //                   divRect.bottom < h1Rect.top ||
-    //                   divRect.top > h1Rect.bottom);
-
-    // // If they overlap, change the color of the h1
-    // if (overlap) {
-    //   this.titleElenmt.nativeElement.style.color = 'white'; // Replace 'newColor' with your desired color
-    // }
+    console.log(Object.keys(this.loginForm.controls))
 
   }
+  private fb = inject(FormBuilder);
+  public loginForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+  })
+  public loginElements = computed(() => Object.keys(this.loginForm.controls))
+
+
+  public onSubmit() {
+
+    console.log('errores', this.loginForm.errors)
+
+    if(this.loginForm.invalid) return
+
+    console.log(this.loginForm.value)
+  }
+
 }

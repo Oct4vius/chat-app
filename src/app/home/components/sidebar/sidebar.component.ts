@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { ImgBoxComponent } from '../../../shared/img-box/img-box.component';
+import { ImgBoxComponent } from '../../../shared/components/img-box/img-box.component';
 import { UsersSideBar } from '../../../interfaces/sidebar.interfaces';
 import { usersMuck } from './muck-data';
 import { Router } from '@angular/router';

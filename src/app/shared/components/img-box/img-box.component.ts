@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { CutNamesPipe } from '../../pipes/cut-names.pipe';
+import { CutNamesPipe } from '../../../pipes/cut-names.pipe';
 
 @Component({
   selector: 'shared-img-box',

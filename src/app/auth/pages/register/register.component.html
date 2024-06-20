@@ -1,1 +1,48 @@
-<p>register works!</p>,
+<div class="flex flex-col w-full items-center">
+    <div class="relative">
+      <h1
+        class="text-4xl font-[ExposeRegular] text-primary name absolute z-20"
+        #title
+      >
+        R e g i s t e r
+      </h1>
+      <h1
+        class="text-4xl font-[ExposeRegular] text-[white] relative z-20 testin"
+        #title
+      >
+        R e g i s t e r
+      </h1>
+    </div>
+  
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col gap-4 w-full"
+    >
+      @for (item of registerElements(); track $index) {
+  
+      <div class="flex flex-col w-full">
+        <label class="capitalize font-[Markin-LT]">{{ item }}</label>
+        <input
+          class="font-[Markin-LT] bg-secundary border-2 focus:no-underline"
+          [formControlName]="item"
+          [type]="item === 'confirm password' ? 'password' : item"
+        />
+        <span *ngIf="isValidField(item)" class="font-[Markin-LT] text-[red]" >
+          {{ getErrorString(item) }}
+        </span>
+      </div>
+  
+      }
+  
+      <button
+        class="font-[ExposeRegular] name text-4xl hover:scale-105 active:scale-95 transition-all"
+      >
+        Join the phantom thieves
+      </button>
+    </form>
+  
+    <a (click)="goToLogin()" class="hover:underline cursor-pointer mt-3">You already have an account?</a>
+
+  </div>
+  

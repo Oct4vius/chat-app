@@ -1,18 +1,5 @@
 <div class="flex flex-col w-full items-center">
-    <div class="relative">
-      <h1
-        class="text-4xl font-[ExposeRegular] text-primary name absolute z-20"
-        #title
-      >
-        R e g i s t e r
-      </h1>
-      <h1
-        class="text-4xl font-[ExposeRegular] text-[white] relative z-20 testin"
-        #title
-      >
-        R e g i s t e r
-      </h1>
-    </div>
+    <shared-custom-header title="R e g i s t e r" />
   
     <form
       [formGroup]="registerForm"
@@ -29,7 +16,7 @@
           [type]="item === 'confirm password' ? 'password' : item"
         />
         <span *ngIf="isValidField(item)" class="font-[Markin-LT] text-[red]" >
-          {{ getErrorString(item) }}
+          {{ isValidField(item) }}
         </span>
       </div>
   

@@ -1,18 +1,5 @@
 <div class="flex flex-col items-center">
-  <div class="relative">
-    <h1
-      class="text-4xl font-[ExposeRegular] text-primary name absolute z-20"
-      #title
-    >
-      L o g i n
-    </h1>
-    <h1
-      class="text-4xl font-[ExposeRegular] text-[white] relative z-20 testin"
-      #title
-    >
-      L o g i n
-    </h1>
-  </div>
+  <shared-custom-header title="L o g i n" />
 
   <form
     [formGroup]="loginForm"
@@ -28,6 +15,9 @@
         [formControlName]="item"
         [type]="item"
       />
+      <span *ngIf="isValidField(item)" class="font-[Markin-LT] text-[red]" >
+        {{ isValidField(item) }}
+      </span>
     </div>
 
     }

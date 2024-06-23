@@ -8,6 +8,7 @@ import {
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ValidatorService } from '../../../shared/services/validators.service';
+import { CustomHeaderComponent } from '../../../shared/components/custom-header/custom-header.component';
 
 interface ControlNames {
   'first name': string;
@@ -19,7 +20,11 @@ interface ControlNames {
 
 @Component({
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule, 
+    ReactiveFormsModule,
+    CustomHeaderComponent,
+  ],
   templateUrl: './register.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -33,8 +38,8 @@ export class RegisterComponent {
       'first name': ['', Validators.required],
       'last name': ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      'confirm password': ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      'confirm password': ['', [Validators.required, Validators.minLength(6)]],
     },
     {
       validators: [
@@ -46,23 +51,12 @@ export class RegisterComponent {
     }
   );
 
-  public errors: {[x: string]: string} = {
-    require: 'This field is require',
-    email: 'This field have to be an email',
-  };
-
   public registerElements = computed(() =>
     Object.keys(this.registerForm.controls)
   );
 
   public isValidField(field: string) {
     return this.validatorService.isValidField(this.registerForm, field);
-  }
-
-  public getErrorString(field: string) {
-    const error = Object.keys(this.registerForm.controls[field as keyof ControlNames])
-    console.log(error, field)
-    // return this.errors[error]
   }
 
   public onSubmit() {

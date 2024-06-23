@@ -60,7 +60,10 @@ export class RegisterComponent {
   }
 
   public onSubmit() {
-    if (this.registerForm.invalid) return;
+    if (this.registerForm.invalid) {
+      this.registerForm.markAllAsTouched();
+      return;
+    };
 
     console.log(this.registerForm.value);
   }

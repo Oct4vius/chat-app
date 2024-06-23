@@ -26,8 +26,6 @@ export class LoginComponent {
   })
   public loginElements = computed(() => Object.keys(this.loginForm.controls))
 
-
-
   public isValidField(field: string) {
     return this.validatorService.isValidField(this.loginForm, field);
   }

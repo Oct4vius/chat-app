@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, Input } from '@angular/core';
 
 @Component({
   selector: 'shared-custom-header',
@@ -12,6 +12,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class CustomHeaderComponent { 
 
-  @Input({required: true}) title!: string;
+  public title = input.required<string>();
 
 }
